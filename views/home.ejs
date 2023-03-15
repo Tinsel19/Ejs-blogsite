@@ -1,0 +1,41 @@
+
+<%- include("partials/header") -%>
+        <div>
+            <h2>Home</h2>
+            <p> <%= homeContent %> </p>
+        </div>
+
+        <div>
+            <!-- <% for (i = 0 ; i < postList.length; i++) { %>
+                <div>
+                    <h2> <%= postList[i].titleTag %> </h2>
+                    <p> <%= postList[i].postTag %> </p>
+
+                </div>
+            <% } %> -->
+            
+            
+            <% postList.forEach(function (letter) { %>
+               <!-- <% console.log(letter.itemTag); %> -->
+               
+               <div>
+                    <h2> <%= letter.titleTag %> </h2>
+                    <p > <%= letter.postTag.substring(0, 100) + "..." %> <a href=<%= "/posts/" + letter.titleTag %>>read more</a> </p>
+
+                </div>
+
+            <% }); %>
+
+        </div>
+        
+   
+        
+    </div>
+    
+        
+        
+
+        
+    
+
+<%- include("partials/footer") -%>
